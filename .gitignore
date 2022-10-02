@@ -2,3 +2,6 @@
 CyberRPG.csproj
 CyberRPG.sln
 project.godot
+*.import
+*.glb
+*.material

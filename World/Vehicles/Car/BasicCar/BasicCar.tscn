@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/Vehicles/Car/BasicCar/BasicCar.glb" type="PackedScene" id=1]
+[ext_resource path="res://World/Vehicles/Car/BasicCar/Door/PassengerFrontDoor.cs" type="Script" id=2]
+[ext_resource path="res://World/Vehicles/Car/BasicCar/BasicCar.cs" type="Script" id=3]
+
+[node name="BasicCar" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="PassengersFrontDoor" parent="Body" index="26"]
+script = ExtResource( 2 )
