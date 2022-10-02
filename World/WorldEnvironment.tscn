@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://World/Vehicles/Car/BasicCar/BasicCar.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Environment" id=1]
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -0.0322481, 0, -0.99948, 0, 1, 0, 0.99948, 0, -0.0322481, -2.81268, 0.676686, 0.0886583 )
+
+[node name="BasicCar" parent="." instance=ExtResource( 1 )]
