@@ -5,7 +5,7 @@ using System;
 namespace CyberRPG.World.Vehicles.Car.BasicCar
 { 
 
-public class BasicCar : Spatial
+public class BasicCar : Spatial, ICar
 {
 
 	private PassengerFrontDoor passengerFrontDoor;

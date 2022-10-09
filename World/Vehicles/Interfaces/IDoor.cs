@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CyberRPG.World.Vehicles.Interfaces
 {
-    internal interface IDoor
+    public interface IDoor
     {
         void OpenDoor(bool animate);
         void CloseDoor(bool animate);

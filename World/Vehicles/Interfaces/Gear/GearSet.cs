@@ -1,14 +1,16 @@
-public namespace World.Vehicles.Interfaces.Gear
+using System;
+
+namespace World.Vehicles.Interfaces.Gear
 {
     public class GearSet
     {
 
-        private Gear[] gears { get; }
+        private IGear[] Gears { get; }
 
-        public int GetMaximumGear()
+        public IGear GetMaximumGear()
         {
-            Gear maximum;
-            foreach (Gear gear in this.gears)
+            IGear maximum = null;
+            foreach (IGear gear in this.Gears)
             {
                 if (maximum == null)
                 {
@@ -22,15 +24,15 @@ public namespace World.Vehicles.Interfaces.Gear
             }
             if (maximum == null)
             {
-                throw new RuntimeException("Cannot find maximum gear number");
+                throw new SystemException("Cannot find maximum gear number");
             }
             return maximum;
         }
 
-        public int GetMinimumGear()
+        public IGear GetMinimumGear()
         {
-            Gear minimum;
-            foreach (Gear gear in this.gears)
+            IGear minimum = null;
+            foreach (IGear gear in this.Gears)
             {
                 if (minimum == null)
                 {
@@ -44,21 +46,21 @@ public namespace World.Vehicles.Interfaces.Gear
             }
             if (minimum == null)
             {
-                throw new RuntimeException("Cannot find minimum gear number");
+                throw new SystemException("Cannot find minimum gear number");
             }
             return minimum;
         }
 
-        public Gear GetGear(int index)
+        public IGear GetGear(int index)
         {
-            foreach (Gear gear in this.gears)
+            foreach (IGear gear in this.Gears)
             {
                 if (gear.GetGearNumber() == index)
                 {
                     return gear;
                 }
             }
-            throw new IndexOutOfBoundsException("No gear with " + index + "");
+            throw new IndexOutOfRangeException("No gear with " + index + "");
         }
     }
 }
