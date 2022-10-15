@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://CyberUser/DebugCamera.cs" type="Script" id=1]
+[ext_resource path="res://CyberRPG/User/DebugCamera.cs" type="Script" id=1]
 [ext_resource path="res://World/Vehicles/Car/BasicCar/BasicCar.tscn" type="PackedScene" id=2]
 [ext_resource path="res://World/Roads/Flat/SingleLane/BiDirection/SingleLaneBiDirection.tscn" type="PackedScene" id=3]
 

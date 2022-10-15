@@ -1,4 +1,5 @@
 .mono
+.vscode
 CyberRPG.csproj
 CyberRPG.sln
 project.godot

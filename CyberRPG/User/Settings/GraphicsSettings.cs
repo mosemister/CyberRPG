@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CyberRPG.CyberUser.Settings
+namespace CyberRPG.User.Settings
 {
     public class GraphicsSettings
     {
