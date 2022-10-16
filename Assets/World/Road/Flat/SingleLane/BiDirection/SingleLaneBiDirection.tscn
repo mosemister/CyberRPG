@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/World/Road/Debug/DebugRoadBlack.tres" type="Material" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.205781, 0.23381, 0.205152 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="PlaneMesh" id=3]
+
+[node name="Road" type="Spatial"]
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 30, 0, 0, 0, 1, 0, 0, 0, 30, 6, 0, 6 )
+
+[node name="GroundDetection" type="CollisionShape" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="GroundShape" type="MeshInstance" parent="Ground"]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../GroundDetection")
+
+[node name="Debug" type="Spatial" parent="."]
+
+[node name="RoadToward" type="MeshInstance" parent="Debug"]
+transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 2, 6, 0.22, 3 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = ExtResource( 1 )
+
+[node name="RoadAway" type="MeshInstance" parent="Debug"]
+transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 2, 6, 0.22, 9 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 1 )
