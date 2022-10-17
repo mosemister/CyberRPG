@@ -7,7 +7,7 @@ namespace CyberRPG.User.Mission
     public interface IMission
     {
 
-        public ICollection<IObjective> Objectives { get; }
+        ICollection<IObjective> Objectives { get; }
 
     }
 }

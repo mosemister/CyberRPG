@@ -1,5 +1,5 @@
 using System;
-using CyberRPG.World;
+using CyberRPG.Camera;
 using Godot;
 
 namespace CyberRPG.Camera
