@@ -2,8 +2,5 @@
 .vscode
 CyberRPG.csproj
 CyberRPG.sln
-project.godot
 *.import
-*.glb
-*.material
 *.vs
