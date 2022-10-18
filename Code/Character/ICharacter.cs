@@ -2,10 +2,8 @@ using CyberRPG.Controller;
 
 namespace CyberRPG.Character
 {
-    public interface ICharacter
+    public interface ICharacter : IControllable
     {
-
-        IController GetController();
 
     }
 }

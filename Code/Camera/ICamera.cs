@@ -1,7 +1,10 @@
+using CyberRPG.Controller;
+
 namespace CyberRPG.Camera
 {
-    public interface ICamera
+    public interface ICamera : IControllable
     {
+
 
     }
 }

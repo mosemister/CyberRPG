@@ -117,6 +117,10 @@ debug_rotate_down={
  ]
 }
 
+[mono]
+
+project/assembly_name="CyberRPG"
+
 [physics]
 
 common/enable_pause_aware_picking=true
