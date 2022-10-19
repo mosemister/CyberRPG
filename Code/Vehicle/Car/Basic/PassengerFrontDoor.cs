@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CyberRPG.Vehicle;
+using CyberRPG.Controller;
 using Godot;
 
 namespace CyberRPG.Vehicle.Car.Basic
 {
-    public class PassengerFrontDoor : Spatial, IDoor
+    public class PassengerFrontDoor : Spatial, IInteractableDoor
     {
 
         private DoorState doorState;
@@ -19,6 +15,8 @@ namespace CyberRPG.Vehicle.Car.Basic
 
         private Transform closedTransform;
         private Transform liftedTransform;
+
+        private Area interactableArea;
 
         private static readonly Transform ROTATED_TRANSFORM = new Transform(new Basis()
         {
@@ -59,6 +57,9 @@ namespace CyberRPG.Vehicle.Car.Basic
 
         public override void _Ready()
         {
+
+            interactableArea = GetNode<Area>("Area");
+
             doorState = DoorState.CLOSED;
             closedTransform = this.Transform;
             Vector3 liftedOrigin = closedTransform.origin;
@@ -100,8 +101,7 @@ namespace CyberRPG.Vehicle.Car.Basic
                 TickElevateDoor(delta);
                 return;
             }
-            //temp
-            SetDoorState(DoorState.CLOSING);
+            SetDoorState(DoorState.OPEN);
         }
 
         private void TickCloseDoor(float delta)
@@ -210,6 +210,25 @@ namespace CyberRPG.Vehicle.Car.Basic
             }
             this.Transform = OPEN_TRANSFORM;
             doorState = DoorState.OPEN;
+        }
+
+        public void OnInteract(IController controller)
+        {
+            if (this.doorState == DoorState.OPEN)
+            {
+                this.CloseDoor(true);
+            } else if (this.doorState == DoorState.CLOSED)
+            {
+                this.OpenDoor(true);
+            }
+        }
+
+        public bool CanInteract(IController controller)
+        {
+
+
+
+            return true;
         }
     }
 }

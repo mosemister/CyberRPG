@@ -1,12 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Vehicle/Car/Basic/Import/BasicCar.glb" type="PackedScene" id=1]
 [ext_resource path="res://Code/Vehicle/Car/Basic/PassengerFrontDoor.cs" type="Script" id=2]
 [ext_resource path="res://Code/Vehicle/Car/Basic/BasicCar.cs" type="Script" id=3]
 
+[sub_resource type="BoxShape" id=1]
 
 [node name="BasicCar" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="PassengersFrontDoor" parent="Body" index="26"]
 script = ExtResource( 2 )
+
+[node name="Area" type="Area" parent="Body/PassengersFrontDoor/Passengers Door Window" index="0"]
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 1.58861, 0.802347, 0.613057 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Body/PassengersFrontDoor/Passengers Door Window/Area" index="0"]
+shape = SubResource( 1 )

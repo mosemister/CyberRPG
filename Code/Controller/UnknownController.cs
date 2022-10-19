@@ -5,7 +5,7 @@ namespace CyberRPG.Controller
     public class UnknownController : IController
     {
 
-        private IControllable controlling;
+        private readonly IControllable controlling;
 
         public UnknownController(IControllable controllable)
         {
@@ -18,9 +18,9 @@ namespace CyberRPG.Controller
             this.controlling.Move(direction);
         }
 
-        public void Rotate(float yaw, float pitch)
+        public void RotateCamera(float yaw, float pitch)
         {
-            this.controlling.Rotate(yaw, pitch);
+            this.controlling.RotateCamera(yaw, pitch);
         }
     }
 }

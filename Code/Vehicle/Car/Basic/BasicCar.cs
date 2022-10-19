@@ -14,7 +14,6 @@ namespace CyberRPG.Vehicle.Car.Basic
 		public override void _Ready()
 		{
 			this.passengerFrontDoor = this.GetNode<PassengerFrontDoor>("Body/PassengersFrontDoor");
-			this.passengerFrontDoor.OpenDoor(true);
 		}
 	}
 }

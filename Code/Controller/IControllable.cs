@@ -8,6 +8,6 @@ namespace CyberRPG.Controller
 
         void Move(Vector3 direction);
 
-        void Rotate(float yaw, float pitch);
+        void RotateCamera(float yaw, float pitch);
     }
 }
